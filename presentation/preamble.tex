@@ -1,3 +1,4 @@
+% !TEX root = ../presentation.tex
 % Presentation Preamble
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -14,19 +15,23 @@
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 	PACKAGES
+% 	GENERAL PACKAGES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage[american]{babel}
-\usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage{blkarray}
 \usepackage{textcomp}
-\usepackage{algorithm}
-\usepackage[noend]{algpseudocode}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	MATH
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsmath}
+\usepackage{blkarray}
 \usepackage{gensymb}
+\usepackage{relsize}
 \usepackage{cancel}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -46,6 +51,8 @@
 % 	CODE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 \usepackage{listings}
 
 \definecolor{stringgreen}{RGB}{50,220,15}
@@ -92,6 +99,8 @@
 % 	NEW COMMANDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\red}{\color{red}}
+
 \newcommand{\inlineitem}[2]{{\color{orange}#1.} #2 \hspace{0.5cm}}
 
 \newcommand{\textframe}[1]{%
@@ -130,46 +139,41 @@
 
 \newcommand{\frameheader}[1]{{\Large #1}\vspace{0.5cm}}
 
-% http://tex.stackexchange.com/questions/29877/need-help-creating-a-3d-cube-from-a-2d-set-of-nodes-in-tikz
-
-\newcommand{\tikzcuboid}[4]{% width, height, depth, scale
-\begin{tikzpicture}[scale=#4]
-\foreach \x in {0,...,#1}
-{   \draw (\x ,0  ,#3 ) -- (\x ,#2 ,#3 );
-    \draw (\x ,#2 ,#3 ) -- (\x ,#2 ,0  );
-}
-\foreach \x in {0,...,#2}
-{   \draw (#1 ,\x ,#3 ) -- (#1 ,\x ,0  );
-    \draw (0  ,\x ,#3 ) -- (#1 ,\x ,#3 );
-}
-\foreach \x in {0,...,#3}
-{   \draw (#1 ,0  ,\x ) -- (#1 ,#2 ,\x );
-    \draw (0  ,#2 ,\x ) -- (#1 ,#2 ,\x );
-}
-\end{tikzpicture}
-}
-
-\newcommand{\tikzcube}[2]{% length, scale
-\tikzcuboid{#1}{#1}{#1}{#2}
+% x offset, y offset, z offset, length
+\newcommand{\cube}[4]{
+  \xyplane{#3} {
+    \draw (#1, #2) rectangle ++(#4, #4);
+  }
+  \xyplane{#3 + #4} {
+    \draw (#1, #2) rectangle ++(#4, #4);
+  }
+  \yzplane{#1}{
+    \draw (#2, #3) rectangle ++(#4, #4);
+  }
+  \yzplane{{#1 + #4}}{
+    \draw (#2, #3) rectangle ++(#4, #4);
+  }
 }
 
 \newcommand{\xyplane}[2]{
-  \begin{scope}[canvas is xy plane at z=#1]
+  \begin{scope}[canvas is xy plane at z={#1}]
     #2
   \end{scope}
 }
 
 \newcommand{\xzplane}[2]{
-  \begin{scope}[canvas is xz plane at y=#1]
+  \begin{scope}[canvas is xz plane at y={#1}]
     #2
   \end{scope}
 }
 
 \newcommand{\yzplane}[2]{
-  \begin{scope}[canvas is yz plane at x=#1]
+  \begin{scope}[canvas is yz plane at x={#1}]
     #2
   \end{scope}
 }
+
+\newcommand{\random}[1]{\pdfuniformdeviate #1}
 
 \newcommand{\randomcolor}{%
   \definecolor{randomcolor}{RGB}

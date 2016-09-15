@@ -5,45 +5,51 @@
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 	Title
+% 	TITLE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Hack the world
-\begin{frame}[plain]
+{
+\setbeamertemplate{footline}[text line]{%
+  \parbox{\linewidth}{%
+    \vspace*{-20pt}%
+    \footnotesize Peter Goldsborough\hspace{5.2cm} {\today}}%
+}
+
+\begin{frame}
+  % Put author, date into footer
     \title{
-      \vspace{1.2cm}\\
-      Introduction to Machine Learning\\
-      feat. TensorFlow\\
-      \vspace{1cm}
+      \vspace{1.6cm}\\
+      {\Huge \texttt{tf.talk()}}\\
+      \vspace{0.75cm}
+      An Introduction to Deep Learning\\ with TensorFlow\\
+      \vspace{0.75cm}
       \includegraphics[scale=0.1]{tensorflow}}
-    \author{Peter Goldsborough}
+      \date{}
     \titlepage
 \end{frame}
+}
+
+\addtocounter{framenumber}{-1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 	Introduction
+% 	INTRODUCTION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{slides/toc.tex}
-\input{slides/background.tex}
-\input{slides/follow-along.tex}
+%\input{slides/toc.tex}
+%\input{slides/background.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 	Slides
+% 	SLIDES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \input{slides/neural-nets.tex}
-
-\input{slides/definition.tex}
-\input{slides/methods.tex}
-\input{slides/deep-learning.tex}
+%\input{slides/neural-nets.tex}
+%\input{slides/deep-learning.tex}
 \input{slides/tensorflow.tex}
-\input{slides/resources.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 	Bibliography
+% 	OUTRO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{slides/bibliography.tex}
+% \input{slides/resources.tex}
 
 \end{document}

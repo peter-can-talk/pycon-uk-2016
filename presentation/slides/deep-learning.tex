@@ -29,10 +29,10 @@
   \only<5->{
   \begin{tikzpicture}
     % R layer (feature map)
-    % \onslide<8->{
-    % \yzplane{0}{
-    %   \fill [ProcessBlue] (0, 0) rectangle ++(4, 4);
-    % }
+    \onslide<8->{
+    \yzplane{0}{
+      \fill [ProcessBlue] (0, 0) rectangle ++(4, 4);
+    }
     % \xyplane{0}{
     %   \fill [ProcessBlue] (0, 0) rectangle ++(0.3, 4);
     % }
@@ -45,13 +45,13 @@
     % \xzplane{4}{
     %   \fill [ProcessBlue] (0, 0) rectangle ++(0.3, 4);
     % }
-    % }
+    }
 
     % G layer (feature map)
-    % \onslide<7->{
-    % \yzplane{0.6}{
-    %   \fill [Green] (0, 0) rectangle ++(4, 4);
-    % }
+    \onslide<7->{
+    \yzplane{0.6}{
+      \fill [Green] (0, 0) rectangle ++(4, 4);
+    }
     % \yzplane{0.9}{
     %   \fill [Green] (0, 0) rectangle ++(4, 4);
     % }
@@ -67,13 +67,13 @@
     % \xzplane{4}{
     %   \fill [Green] (0.6, 0) rectangle ++(0.3, 4);
     % }
-    % }
+    }
 
     % B layer (feature map)
-    % \onslide<6->{
-    % \yzplane{1.2}{
-    %   \fill [Red] (0, 0) rectangle ++(4, 4);
-    % }
+    \onslide<6->{
+    \yzplane{1.2}{
+      \fill [Red] (0, 0) rectangle ++(4, 4);
+    }
     % \yzplane{1.5}{
     %   \fill [Red] (0, 0) rectangle ++(4, 4);
     % }
@@ -89,7 +89,7 @@
     % \xzplane{4}{
     %   \fill [Red] (1.2, 0) rectangle ++(0.3, 4);
     % }
-    % }
+    }
 
     % Pixels
     \yzplane{1.8}{
@@ -225,7 +225,7 @@
     }
 
     % Labels
-    \only<17-> { \draw (y0)+(1.25, 0) node {unicorn}; }
+    \only<17-> { \draw (y0)+(1.25, 0.1) node {unicorn}; }
     \only<18-> { \draw (y1)+(1.2, 0) node {teapot}; }
     \only<19-> { \draw (y2)+(0.95, 0) node {car}; }
   \end{tikzpicture}
@@ -362,7 +362,7 @@
 %   \end{enumerate}
 % \end{slide}
 
-\begin{slide}{Convolutional Neural Networks}
+\begin{slide}{Time for ze kitteh}
   \only<1>{
 
     % trim = {left bottom right above}
@@ -525,31 +525,31 @@
     }
 
     \only<2-3>{
-    \draw (0.5, 0.5) node {$0.8$};
-    \draw (1.5, 0.5) node {$0.3$};
-    \draw (2.5, 0.5) node {$0.5$};
-    \draw (0.5, 1.5) node {$0.7$};
-    \draw (1.5, 1.5) node {$0.2$};
-    \draw (2.5, 1.5) node {$0.6$};
-    \draw (0.5, 2.5) node {$0.4$};
-    \draw (1.5, 2.5) node {$0.9$};
-    \draw (2.5, 2.5) node {$0.1$};
+      \draw (0.5, 0.5) node {$0.8$};
+      \draw (1.5, 0.5) node {$0.3$};
+      \draw (2.5, 0.5) node {$0.5$};
+      \draw (0.5, 1.5) node {$0.7$};
+      \draw (1.5, 1.5) node {$0.2$};
+      \draw (2.5, 1.5) node {$0.6$};
+      \draw (0.5, 2.5) node {$0.4$};
+      \draw (1.5, 2.5) node {$0.9$};
+      \draw (2.5, 2.5) node {$0.1$};
     }
 
     \draw (1.5, -0.5) node {Image};
 
     \only<3-3>{
-    \draw (4, 0) grid ++(2, 2);
+      \draw (4, 0) grid ++(2, 2);
 
-    \draw (4.5, 0.5) node {$3.1$};
-    \draw (5.5, 0.5) node {$0.9$};
-    \draw (4.5, 1.5) node {$5.7$};
-    \draw (5.5, 1.5) node {$2.4$};
+      \draw (4.5, 0.5) node {$3.1$};
+      \draw (5.5, 0.5) node {$0.9$};
+      \draw (4.5, 1.5) node {$5.7$};
+      \draw (5.5, 1.5) node {$2.4$};
 
-    \draw (5, -0.5) node {Kernel};
+      \draw (5, -0.5) node {Kernel};
     }
 
-    \only<4-5>{
+    \only<4>{
       \draw (0.5, 0.5) node {$0.8$};
       \draw (1.5, 0.5) node {$0.3$};
       \draw (2.5, 0.5) node {$0.5$};
@@ -562,11 +562,11 @@
 
       \draw [red] (0, 1) grid (2, 3);
     }
-    \only<5-> {
+    \only<4-> {
       \draw [red] (4, 1) rectangle ++(1, 1) node [midway, black] {$6.79$};
       \draw (5, -0.5) node {Output};
     }
-    \only<6-7>{
+    \only<5>{
     \draw (0.5, 0.5) node {$0.8$};
     \draw (1.5, 0.5) node {$0.3$};
     \draw (2.5, 0.5) node {$0.5$};
@@ -579,10 +579,10 @@
 
       \draw [ProcessBlue] (1, 1) grid (3, 3);
     }
-    \only<7-> {
+    \only<5-> {
       \draw [ProcessBlue] (5, 1) rectangle ++(1, 1) node [black, midway] {$6.53$};
     }
-    \only<8-9>{
+    \only<6>{
     \draw (0.5, 0.5) node {\tiny$3.1 \cdot 0.8$};
     \draw (1.5, 0.5) node {\tiny$0.9 \cdot 0.3$};
     \draw (2.5, 0.5) node {$0.5$};
@@ -595,10 +595,10 @@
 
       \draw [LimeGreen] (0, 0) grid (2, 2);
     }
-    \only<9-> {
+    \only<6-> {
       \draw [LimeGreen] (4, 0) rectangle ++(1, 1) node [black, midway] {$7.67$};
     }
-    \only<10-11>{
+    \only<7>{
     \draw (0.5, 0.5) node {$0.8$};
     \draw (1.5, 0.5) node {\tiny$3.1 \cdot 0.3$};
     \draw (2.5, 0.5) node {\tiny$0.9 \cdot 0.5$};
@@ -611,35 +611,13 @@
 
       \draw [Magenta] (1, 0) grid (3, 2);
     }
-    \only<11-> {
+    \only<7-> {
       \draw [Magenta] (5, 0) rectangle ++(1, 1) node [black, midway] {$3.96$};
     }
   \end{tikzpicture}
 \end{slide}
-
-Required below
-\newcommand{\kernel}[1]{
-  \xyplane{#1}{
-    \draw (0, 2.79) grid [step=0.4] ++(1.2, 1.21);
-  }
-  \xyplane{{#1+1.2}}{
-    \draw (0, 2.79) grid [step=0.4] ++(1.2, 1.21);
-  }
-  \yzplane{0}{
-    \draw (2.79, #1) grid [step=0.4] ++(1.21, 1.21);
-  }
-  \yzplane{1.2}{
-    \draw (2.79, #1) grid [step=0.4] ++(1.21, 1.21);
-  }
-  \xzplane{4}{
-    \draw (0, #1) grid [step=0.4] ++(1.21, 1.21);
-  }
-  \xzplane{2.8}{
-    \draw (0, #1) grid [step=0.4] ++(1.21, 1.21);
-  }
-}
-
-\begin{slide}{Convolutional Neural Networks: Mechanics}
+\begin{frame}[fragile]{Convolutional Neural Networks: Mechanics}
+  \centering
   \begin{tikzpicture}
     % R layer (feature map)
     \yzplane{0}{
@@ -689,6 +667,28 @@ Required below
       \draw [red] (0.8, 0) rectangle ++(0.4, 4);
     }
 
+    % Draws the kernel cube at time step #1
+    \newcommand{\kernel}[1]{
+      \xyplane{#1}{
+        \draw (0, 2.79) grid [step=0.4] ++(1.2, 1.21);
+      }
+      \xyplane{{#1+1.2}}{
+        \draw (0, 2.79) grid [step=0.4] ++(1.2, 1.21);
+      }
+      \yzplane{0}{
+        \draw (2.79, #1) grid [step=0.4] ++(1.21, 1.21);
+      }
+      \yzplane{1.2}{
+        \draw (2.79, #1) grid [step=0.4] ++(1.21, 1.21);
+      }
+      \xzplane{4}{
+        \draw (0, #1) grid [step=0.4] ++(1.21, 1.21);
+      }
+      \xzplane{2.8}{
+        \draw (0, #1) grid [step=0.4] ++(1.21, 1.21);
+      }
+    }
+
     \newcount\slidecount\relax
     \slidecount=1\relax
     \foreach \i in {0, 0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8} {
@@ -708,7 +708,7 @@ Required below
       \global\advance\slidecount by 1\relax
     }
 
-    \foreach \x/\i in {4/10, 4.4/11, 4.8/12} {
+    \foreach \x/\i in {4/10, 4.4/11, 4.8/12, 5.2/13, 5.6/14} {
       \only<\i-> {
         \yzplane{\x}{
           \draw (0.4, 0.4) rectangle ++(3.2, 3.2);
@@ -729,7 +729,7 @@ Required below
     }
 
   \end{tikzpicture}
-\end{slide}
+\end{frame}
 
 \begin{slide}{Convolutional Neural Networks: Mechanics}
   \frameheader{Recipe for a Convolutional Neural Network Layer}
@@ -749,80 +749,109 @@ Required below
   \end{itemize}
 \end{slide}
 
-\begin{slide}{Convolutional Neural Networks: Hyperparameters}
-  \begin{itemize}
-    \item<1-> Convolutional Neural Networks have three hyperparameters
-    \begin{enumerate}
-      \item<2-> Kernel size % usually odd for valid padding, 3x3 or 5x5
-      \item<3-> Kernel stride % usually 1 or 2
-      \item<4-> Padding (valid or same)
-      % Valid we don't go past th edge, so the spatial dimension will reduce
-      % Same padding we do go past the edge and pad the image with zeros
-      % then the spatial dimension will stay the same (most common)
-    \end{enumerate}
-  \end{itemize}
-  \vspace{1cm}
+% \begin{slide}{Convolutional Neural Networks: Hyperparameters}
+%   \begin{itemize}
+%     \item<1-> Convolutional Neural Networks have three hyperparameters
+%     \begin{enumerate}
+%       \item<2-> Kernel size % usually odd for valid padding, 3x3 or 5x5
+%       \item<3-> Kernel stride % usually 1 or 2
+%       \item<4-> Padding (valid or same)
+%       % Valid we don't go past th edge, so the spatial dimension will reduce
+%       % Same padding we do go past the edge and pad the image with zeros
+%       % then the spatial dimension will stay the same (most common)
+%     \end{enumerate}
+%   \end{itemize}
+%   \vspace{1cm}
+%
+%   \onslide<4->{
+%     \begin{tikzpicture}
+%       \draw (0, 0) grid [step=0.5] (2, 2);
+%       \foreach \i/\s in {0/5, 0.5/6} {
+%         \only<\s>{
+%           \fill [red] (\i, 0.5) rectangle ++(1.5, 1.5);
+%           \draw (\i, 0.5) grid [step=0.5] ++(1.5, 1.5);
+%         }
+%       }
+%       \newcommand{\drawzeros}{
+%         \foreach \i in {0, 0.5, ..., 1.5} {
+%           \draw (\i, -0.5) rectangle ++(0.5, 0.5) node [midway] {0};
+%           \draw (-0.5, \i) rectangle ++(0.5, 0.5) node [midway] {0};
+%           \draw (\i, 2) rectangle ++(0.5, 0.5) node [midway] {0};
+%           \draw (2, \i) rectangle ++(0.5, 0.5) node [midway] {0};
+%         }
+%         \foreach \i in {-0.5, 2} {
+%           \draw (\i, -0.5) rectangle ++(0.5, 0.5) node [midway] {0};
+%           \draw (\i, 2) rectangle ++(0.5, 0.5) node [midway] {0};
+%         }
+%       }
+%       \only<7-> {
+%         \drawzeros
+%       }
+%       \foreach \i/\s in {-0.5/8, 0/9, 0.5/10, 1/11} {
+%         \only<\s>{
+%           \fill [red] (\i, 1) rectangle ++(1.5, 1.5);
+%           \draw ({\i+0.5}, 1.5) rectangle ++(0.5, 0.5) node [midway] {$\times$};
+%           \draw (\i, 1) grid [step=0.5] ++(1.5, 1.5);
+%           \drawzeros
+%         }
+%       }
+%     \end{tikzpicture}
+%   }
+% \end{slide}
 
-  \onslide<4->{
-    \begin{tikzpicture}
-      \draw (0, 0) grid [step=0.5] (2, 2);
-      \foreach \i/\s in {0/5, 0.5/6} {
-        \only<\s>{
-          \fill [red] (\i, 0.5) rectangle ++(1.5, 1.5);
-          \draw (\i, 0.5) grid [step=0.5] ++(1.5, 1.5);
-        }
-      }
-      \newcommand{\drawzeros}{
-        \foreach \i in {0, 0.5, ..., 1.5} {
-          \draw (\i, -0.5) rectangle ++(0.5, 0.5) node [midway] {0};
-          \draw (-0.5, \i) rectangle ++(0.5, 0.5) node [midway] {0};
-          \draw (\i, 2) rectangle ++(0.5, 0.5) node [midway] {0};
-          \draw (2, \i) rectangle ++(0.5, 0.5) node [midway] {0};
-        }
-        \foreach \i in {-0.5, 2} {
-          \draw (\i, -0.5) rectangle ++(0.5, 0.5) node [midway] {0};
-          \draw (\i, 2) rectangle ++(0.5, 0.5) node [midway] {0};
-        }
-      }
-      \only<7-> {
-        \drawzeros
-      }
-      \foreach \i/\s in {-0.5/8, 0/9, 0.5/10, 1/11} {
-        \only<\s>{
-          \fill [red] (\i, 1) rectangle ++(1.5, 1.5);
-          \draw ({\i+0.5}, 1.5) rectangle ++(0.5, 0.5) node [midway] {$\times$};
-          \draw (\i, 1) grid [step=0.5] ++(1.5, 1.5);
-          \drawzeros
-        }
-      }
-    \end{tikzpicture}
-  }
-\end{slide}
 
 \begin{frame}[fragile]{Convolutional Neural Networks: Pooling}
-  \begin{itemize}
-    \item<1-> \emph{Pooling} achieves translational invariance
-    \item<2-> A form of downsampling
-    \item<3-> The maximum stays the maximum
-    % Pooling reduces the width and height, convolutions modify the depth
-  \end{itemize}
-  \vspace{0.5cm}
-  \only<-3> { \vspace{1cm} }
-
   \begin{center}
   \begin{tikzpicture}
-    \newcommand{\numbergrid}[4]{%
-      \draw (0, 0) rectangle ++(1, 1) node [midway] {#1};%
-      \draw (1, 0) rectangle ++(1, 1) node [midway] {#2};%
-      \draw (0, 1) rectangle ++(1, 1) node [midway] {#3};%
-      \draw (1, 1) rectangle ++(1, 1) node [midway] {#4};%
+    \newcommand{\fourgrid}[4]{%
+      \numbersquare{(0, 0)}{1}{#1}
+      \numbersquare{(1, 0)}{1}{#2}
+      \numbersquare{(0, 1)}{1}{#3}
+      \numbersquare{(1, 1)}{1}{#4}
     }
-    \only<4> {\numbergrid{6}{32}{\red 66}{2}}
-    \only<5> {\numbergrid{\red 66}{32}{6}{2}}
-    \only<6> {\numbergrid{6}{32}{2}{\red 66}}
-    \only<7> {\numbergrid{2}{\red 66}{32}{6}}
+
+    \newcommand{\threerow}[4]{
+      \numbersquare{(0, #1)}{1}{#2}
+      \numbersquare{(1, #1)}{1}{#3}
+      \numbersquare{(2, #1)}{1}{#4}
+    }
+
+    \newcommand{\ninegrid}[9]{
+      \threerow{0}{#1}{#2}{#3};
+      \threerow{1}{#4}{#5}{#6};
+      \threerow{2}{#7}{#8}{#9};
+    }
+
+    \only<1> {\fourgrid{6}{32}{66}{2}}
+    \only<2> {\fourgrid{6}{32}{\red 66}{2}}
+    \only<3> {\fourgrid{\red 66}{32}{6}{2}}
+    \only<4> {\fourgrid{6}{32}{2}{\red 66}}
+    \only<5> {\fourgrid{2}{\red 66}{32}{6}}
+
+
+    \only<6-> {\ninegrid{6}{32}{128}{66}{2}{79}{5}{19}{69}}
+
+    \only<7-8> { \draw [red, semithick] (0, 1) grid ++(2, 2); }
+    \only<8-> { \onesquare{(6, 1)}{66}; }
+
+    \only<9> { \draw [red, semithick] (1, 1) grid ++(2, 2); }
+    \only<9-> { \onesquare{(7, 1)}{79}; }
+
+    \only<10> { \draw [red, semithick] (0, 0) grid ++(2, 2); }
+    \only<10-> { \onesquare{(6, 0)}{66}; }
+
+    \only<11> { \draw [red, semithick] (1, 0) grid ++(2, 2); }
+    \only<11-> { \onesquare{(7, 0)}{128}; }
+
   \end{tikzpicture}
-\end{center}
+  \end{center}
+
+  \begin{itemize}
+    \item<12-> \emph{Pooling} achieves translational invariance
+    \item<13-> A form of downsampling
+    \item<14-> Other pooling functions possible
+    % Pooling reduces the width and height, convolutions modify the depth
+  \end{itemize}
 \end{frame}
 %
 \begin{slide}{Convolutional Neural Networks: Architecture}
@@ -830,15 +859,13 @@ Required below
 \end{slide}
 
 \begin{slide}{Convolutional Neural Networks: Intuition}
-  \begin{itemize}
-    \item Each layer of a ConvNet learns to detect features
-    \pitem Later layers combine features of earlier layers
-  \end{itemize}
+  {
+    \LARGE
+    What's in a kernel?
+  }
 \end{slide}
 
 \begin{slide}{Convolutional Neural Networks: Intuition}
-  \frameheader{What's in a kernel?}
-
   \begin{tikzpicture}
     \draw (0, 0) grid ++(3, 3);
     \foreach \i in {0, ..., 2} {
@@ -858,8 +885,6 @@ Required below
 \end{slide}
 
 \begin{slide}{Convolutional Neural Networks: Intuition}
-  \frameheader{What's in a kernel?}
-
   \begin{tikzpicture}
     \draw (0, 0) grid ++(3, 3);
     \foreach \i in {0, ..., 2} {

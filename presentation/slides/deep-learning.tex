@@ -110,6 +110,7 @@
     \item<2-> Extract hierarchical features
     \vspace{1cm}
 
+    \hspace{0.5cm}
     \begin{tikzpicture}[thick]
       \onslide<3->{
       \path (0, 0) coordinate
@@ -125,14 +126,14 @@
       }
 
       \onslide<5->{
-        \path (4.9, 0) coordinate
-              [draw, rectangle, rounded corners, text width=1.9cm, text height = 7pt]
+        \path (4.5, 0) coordinate
+              [draw, rectangle, rounded corners, text width=1cm, text height = 7pt]
               (parts) node {Parts};
         \draw [->] (cont) -- (parts);
       }
 
       \onslide<6->{
-        \path (7.5, 0) coordinate
+        \path (6.6, 0) coordinate
               [draw, rectangle, rounded corners, text width=1.1cm, text height = 7pt]
               (o) node {Objects};
         \draw [->] (parts) -- (o);
@@ -405,7 +406,7 @@
   }
 \end{slide}
 
-\begin{slide}{Convolutional Neural Networks: Mechanics}
+\begin{slide}{Convolutional Neural Networks}
   \frameheader{Weight Sharing}
 
   \begin{tikzpicture}
@@ -538,7 +539,7 @@
 
     \draw (1.5, -0.5) node {Image};
 
-    \only<3-3>{
+    \only<3>{
       \draw (4, 0) grid ++(2, 2);
 
       \draw (4.5, 0.5) node {$3.1$};
@@ -549,7 +550,7 @@
       \draw (5, -0.5) node {Kernel};
     }
 
-    \only<4>{
+    \only<4-5>{
       \draw (0.5, 0.5) node {$0.8$};
       \draw (1.5, 0.5) node {$0.3$};
       \draw (2.5, 0.5) node {$0.5$};
@@ -562,27 +563,27 @@
 
       \draw [red] (0, 1) grid (2, 3);
     }
-    \only<4-> {
+    \only<5-> {
       \draw [red] (4, 1) rectangle ++(1, 1) node [midway, black] {$6.79$};
       \draw (5, -0.5) node {Output};
     }
-    \only<5>{
-    \draw (0.5, 0.5) node {$0.8$};
-    \draw (1.5, 0.5) node {$0.3$};
-    \draw (2.5, 0.5) node {$0.5$};
-    \draw (0.5, 1.5) node {$0.7$};
-    \draw (1.5, 1.5) node {\tiny$3.1 \cdot 0.2$};
-    \draw (2.5, 1.5) node {\tiny$0.9 \cdot 0.6$};
-    \draw (0.5, 2.5) node {$0.4$};
-    \draw (1.5, 2.5) node {\tiny$5.7 \cdot 0.9$};
-    \draw (2.5, 2.5) node {\tiny$2.4 \cdot 0.1$};
+    \only<6>{
+      \draw (0.5, 0.5) node {$0.8$};
+      \draw (1.5, 0.5) node {$0.3$};
+      \draw (2.5, 0.5) node {$0.5$};
+      \draw (0.5, 1.5) node {$0.7$};
+      \draw (1.5, 1.5) node {\tiny$3.1 \cdot 0.2$};
+      \draw (2.5, 1.5) node {\tiny$0.9 \cdot 0.6$};
+      \draw (0.5, 2.5) node {$0.4$};
+      \draw (1.5, 2.5) node {\tiny$5.7 \cdot 0.9$};
+      \draw (2.5, 2.5) node {\tiny$2.4 \cdot 0.1$};
 
       \draw [ProcessBlue] (1, 1) grid (3, 3);
     }
-    \only<5-> {
+    \only<6-> {
       \draw [ProcessBlue] (5, 1) rectangle ++(1, 1) node [black, midway] {$6.53$};
     }
-    \only<6>{
+    \only<7>{
     \draw (0.5, 0.5) node {\tiny$3.1 \cdot 0.8$};
     \draw (1.5, 0.5) node {\tiny$0.9 \cdot 0.3$};
     \draw (2.5, 0.5) node {$0.5$};
@@ -595,10 +596,10 @@
 
       \draw [LimeGreen] (0, 0) grid (2, 2);
     }
-    \only<6-> {
+    \only<7-> {
       \draw [LimeGreen] (4, 0) rectangle ++(1, 1) node [black, midway] {$7.67$};
     }
-    \only<7>{
+    \only<8>{
     \draw (0.5, 0.5) node {$0.8$};
     \draw (1.5, 0.5) node {\tiny$3.1 \cdot 0.3$};
     \draw (2.5, 0.5) node {\tiny$0.9 \cdot 0.5$};
@@ -611,7 +612,7 @@
 
       \draw [Magenta] (1, 0) grid (3, 2);
     }
-    \only<7-> {
+    \only<8-> {
       \draw [Magenta] (5, 0) rectangle ++(1, 1) node [black, midway] {$3.96$};
     }
   \end{tikzpicture}
@@ -708,7 +709,7 @@
       \global\advance\slidecount by 1\relax
     }
 
-    \foreach \x/\i in {4/10, 4.4/11, 4.8/12, 5.2/13, 5.6/14} {
+    \foreach \x/\i in {4/10, 4.4/11, 4.8/12, 5.2/13} {
       \only<\i-> {
         \yzplane{\x}{
           \draw (0.4, 0.4) rectangle ++(3.2, 3.2);
@@ -732,11 +733,11 @@
 \end{frame}
 
 \begin{slide}{Convolutional Neural Networks: Mechanics}
-  \frameheader{Recipe for a Convolutional Neural Network Layer}
+  \frameheader{Recipe for a Convolutional Layer}
   \begin{itemize}
     \item<2-> Ingredients
     \begin{enumerate}
-      \item<3-> Image $I$ with dimension $w \times h \times d$
+      \item<3-> Image $I$ with dimensions $w \times h \times d$
       \item<4-> A kernel (filter) $K$ of size $k \times l \times m$
     \end{enumerate}
     \item<5-> Cooking
@@ -799,7 +800,6 @@
 %   }
 % \end{slide}
 
-
 \begin{frame}[fragile]{Convolutional Neural Networks: Pooling}
   \begin{center}
   \begin{tikzpicture}
@@ -822,12 +822,11 @@
       \threerow{2}{#7}{#8}{#9};
     }
 
-    \only<1> {\fourgrid{6}{32}{66}{2}}
-    \only<2> {\fourgrid{6}{32}{\red 66}{2}}
-    \only<3> {\fourgrid{\red 66}{32}{6}{2}}
-    \only<4> {\fourgrid{6}{32}{2}{\red 66}}
-    \only<5> {\fourgrid{2}{\red 66}{32}{6}}
-
+    % (0, 0) (1, 0) (0, 1) (1, 1)
+    \only<2> {\fourgrid{6}{32}{66}{2}}
+    \only<3> {\fourgrid{6}{32}{\red 66}{2}}
+    \only<4> {\fourgrid{\red 66}{2}{50}{17}}
+    \only<5> {\fourgrid{33}{\red 66}{9}{50}}
 
     \only<6-> {\ninegrid{6}{32}{128}{66}{2}{79}{5}{19}{69}}
 
@@ -858,61 +857,61 @@
   \texttt{INPUT -> [CONV+ -> POOL?]+ -> FC+ -> OUTPUT}
 \end{slide}
 
-\begin{slide}{Convolutional Neural Networks: Intuition}
-  {
-    \LARGE
-    What's in a kernel?
-  }
-\end{slide}
-
-\begin{slide}{Convolutional Neural Networks: Intuition}
-  \begin{tikzpicture}
-    \draw (0, 0) grid ++(3, 3);
-    \foreach \i in {0, ..., 2} {
-      \foreach \j in {0, ..., 2} {
-        \ifnum\i=1
-          \draw ({\i+0.5}, {\j+0.5}) node {1};
-        \else
-          \draw ({\i+0.5}, {\j+0.5}) node {0};
-        \fi
-      }
-    }
-
-      \draw (1.5, -0.7) node {Patterns};
-      % 1. patterns
-      % other things
-  \end{tikzpicture}
-\end{slide}
-
-\begin{slide}{Convolutional Neural Networks: Intuition}
-  \begin{tikzpicture}
-    \draw (0, 0) grid ++(3, 3);
-    \foreach \i in {0, ..., 2} {
-      \foreach \j in {0, ..., 2} {
-        \ifnum\j=1
-          \ifnum\i=0
-            \draw ({\i+0.5}, {\j+0.5}) node {-1};
-          \else
-            \ifnum\i=1
-              \draw ({\i+0.5}, {\j+0.5}) node {1};
-            \else
-              \draw ({\i+0.5}, {\j+0.5}) node {0};
-            \fi
-          \fi
-        \else
-          \draw ({\i+0.5}, {\j+0.5}) node {0};
-        \fi
-      }
-    }
-
-      % When the two pixels are similar, the two values cancel
-      % When they are different (near edges), they give a large value
-      \draw (1.5, -0.7) node {Features};
-      % 1. patterns
-      % other things
-  \end{tikzpicture}
-\end{slide}
-
-\begin{slide}{Convolutional Neural Networks: Intuition}
-  \includegraphics[scale=0.45]{weights}
-\end{slide}
+% \begin{slide}{Convolutional Neural Networks: Intuition}
+%   {
+%     \LARGE
+%     What's in a kernel?
+%   }
+% \end{slide}
+%
+% \begin{slide}{Convolutional Neural Networks: Intuition}
+%   \begin{tikzpicture}
+%     \draw (0, 0) grid ++(3, 3);
+%     \foreach \i in {0, ..., 2} {
+%       \foreach \j in {0, ..., 2} {
+%         \ifnum\i=1
+%           \draw ({\i+0.5}, {\j+0.5}) node {1};
+%         \else
+%           \draw ({\i+0.5}, {\j+0.5}) node {0};
+%         \fi
+%       }
+%     }
+%
+%       \draw (1.5, -0.7) node {Patterns};
+%       % 1. patterns
+%       % other things
+%   \end{tikzpicture}
+% \end{slide}
+%
+% \begin{slide}{Convolutional Neural Networks: Intuition}
+%   \begin{tikzpicture}
+%     \draw (0, 0) grid ++(3, 3);
+%     \foreach \i in {0, ..., 2} {
+%       \foreach \j in {0, ..., 2} {
+%         \ifnum\j=1
+%           \ifnum\i=0
+%             \draw ({\i+0.5}, {\j+0.5}) node {-1};
+%           \else
+%             \ifnum\i=1
+%               \draw ({\i+0.5}, {\j+0.5}) node {1};
+%             \else
+%               \draw ({\i+0.5}, {\j+0.5}) node {0};
+%             \fi
+%           \fi
+%         \else
+%           \draw ({\i+0.5}, {\j+0.5}) node {0};
+%         \fi
+%       }
+%     }
+%
+%       % When the two pixels are similar, the two values cancel
+%       % When they are different (near edges), they give a large value
+%       \draw (1.5, -0.7) node {Features};
+%       % 1. patterns
+%       % other things
+%   \end{tikzpicture}
+% \end{slide}
+%
+% \begin{slide}{Convolutional Neural Networks: Intuition}
+%   \includegraphics[scale=0.45]{weights}
+% \end{slide}

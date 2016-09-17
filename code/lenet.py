@@ -93,13 +93,11 @@ class LeNet5(object):
             third_output = self._propagate(flattened, third_layer)
 
             # Apply dropout for regularization
-            third_output = tf.nn.dropout(third_output, keep_prob=1.0)
+            third_output = tf.nn.dropout(third_output, keep_prob=0.5)
 
             # Propagate through final layer to compute class scores
             scores = self._propagate(third_output, fourth_layer, None)
             probabilities = tf.nn.softmax(scores)
-
-            # softmax with cross ntropy logits
 
             # Pick the highest likelyhood as the predicted class
             self.predictions = tf.argmax(probabilities, dimension=1)
@@ -176,8 +174,8 @@ def train(session, net, batch, epoch, checkpoint):
 
 def main():
     net = LeNet5()
-    number_of_epochs = 1000
-    checkpoint = number_of_epochs / 10
+    number_of_epochs = 10000
+    checkpoint = number_of_epochs / 100
     mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
     with tf.Session(graph=net.graph) as session:
